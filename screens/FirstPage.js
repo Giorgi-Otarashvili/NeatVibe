@@ -55,8 +55,9 @@ const styles = StyleSheet.create({
     fontSize: 40,
     alignSelf: "center",
     marginBottom: 40,
-    color:'green',
-    // backgroundColor:'blue'
+    // color:'green',
+    // backgroundColor:'blue',
+    fill:"white"
   },
   forgetPass: {
     // backgroundColor:"blue",
