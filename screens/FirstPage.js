@@ -3,6 +3,7 @@ import AuthInput from "../components/AuthInput";
 import { useNavigation } from "@react-navigation/native";
 import CustomButton from "../components/CustomButton";
 import { useState } from "react";
+import NeatVibeIcon from "../assets/vectorSvg/VectorSvg";
 
 const FirstPage = () => {
   const [username, setUsername] = useState("");
@@ -17,7 +18,9 @@ const FirstPage = () => {
 
   return (
     <View style={styles.container}>
-      <Image source={require("../assets/Vector.svg")} style={styles.logo} />
+      {/* <Image source={require("../assets/Vector.svg")} style={styles.logo} /> */}
+      {/* <VectorIcon style={styles.logo} /> */}
+      <NeatVibeIcon style={styles.logo} size={72}/>
 
       <AuthInput label="Username" value={username} onChangeText={setUsername} />
 

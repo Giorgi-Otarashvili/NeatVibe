@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
+import NeatVibeIcon from "../assets/vectorSvg/VectorSvg";
 
 const CustomHeader = ({ title }) => {
   const navigation = useNavigation();
@@ -21,13 +22,7 @@ const CustomHeader = ({ title }) => {
         </TouchableOpacity>
 
         <Text style={styles.headerTitle}>{title}</Text>
-
-        <TouchableOpacity onPress={() => alert("Settings tapped!")}>
-          <Image
-            source={require("../assets/Vector.svg")}
-            style={styles.logoo}
-          />
-        </TouchableOpacity>
+          <NeatVibeIcon size={24} />
       </View>
     </>
   );
