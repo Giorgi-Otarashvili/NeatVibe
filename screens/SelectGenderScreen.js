@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import CustomHeader from "../components/CustomHeader";
 
-const RegisterStep1 = () => {
+const SelectGenderScreen = () => {
   const navigation = useNavigation();
 
   const handleGenderSelect = (gender) => {
@@ -42,7 +42,7 @@ const RegisterStep1 = () => {
   );
 };
 
-export default RegisterStep1;
+export default SelectGenderScreen;
 
 const styles = StyleSheet.create({
   container: {

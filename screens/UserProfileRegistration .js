@@ -5,7 +5,7 @@ import CustomHeader from '../components/CustomHeader';
 import AuthInput from '../components/AuthInput';
 import CustomButton from '../components/CustomButton';
 
-const RegisterStep3 = () => {
+const UserProfileRegistration  = () => {
   const navigation  = useNavigation();
   const route       = useRoute();
 
@@ -76,7 +76,7 @@ const RegisterStep3 = () => {
   );
 };
 
-export default RegisterStep3;
+export default UserProfileRegistration ;
 
 const styles = StyleSheet.create({
   container: {

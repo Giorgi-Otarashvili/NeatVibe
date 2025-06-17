@@ -5,7 +5,7 @@ import AuthInput from '../components/AuthInput';
 import CustomButton from '../components/CustomButton';
 import { useState } from 'react';
 
-const RegisterStep4 = () => {
+const CreatePasswordScreen = () => {
   const navigation = useNavigation();
   const route = useRoute();
 
@@ -68,7 +68,7 @@ const RegisterStep4 = () => {
   );
 };
 
-export default RegisterStep4;
+export default CreatePasswordScreen;
 
 const styles = StyleSheet.create({
   container: {

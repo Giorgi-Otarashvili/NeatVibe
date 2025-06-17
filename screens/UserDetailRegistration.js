@@ -6,7 +6,7 @@ import AuthInput from "../components/AuthInput";
 import CustomButton from "../components/CustomButton";
 import { Alert } from "react-native";
 
-const RegisterStep2 = () => {
+const UserDetailRegistration = () => {
   const navigation = useNavigation();
   const route = useRoute();
   const { gender } = route.params || {};
@@ -30,7 +30,6 @@ const RegisterStep2 = () => {
 
     if (!name || !lastName || !nationality || !type) {
     Alert.alert("yvela inputi sheavse  bjjjjj");
-    // return;
   
     }
     if (name && lastName && nationality && type) {
@@ -142,7 +141,7 @@ const RegisterStep2 = () => {
   );
 };
 
-export default RegisterStep2;
+export default UserDetailRegistration;
 
 const styles = StyleSheet.create({
   container: {

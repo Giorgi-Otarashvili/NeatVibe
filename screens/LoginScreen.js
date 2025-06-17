@@ -5,7 +5,7 @@ import CustomButton from "../components/CustomButton";
 import { useState } from "react";
 import NeatVibeIcon from "../assets/vectorSvg/VectorSvg";
 
-const FirstPage = () => {
+const LoginScreen = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   
@@ -45,7 +45,7 @@ const FirstPage = () => {
   );
 };
 
-export default FirstPage;
+export default LoginScreen;
 
 const styles = StyleSheet.create({
   container: {

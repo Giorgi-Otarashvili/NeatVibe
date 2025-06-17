@@ -1,11 +1,11 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import FirstPage from "../screens/FirstPage";
-import RegisterStep1 from "../screens/RegisterStep1";
-import RegisterStep2 from "../screens/RegisterStep2";
-import RegisterStep3 from "../screens/RegisterStep3";
-import RegisterStep4 from "../screens/RegisterStep4";
+import LoginScreen from "../screens/LoginScreen";
+import SelectGenderScreen from "../screens/SelectGenderScreen";
+import UserDetailRegistration from "../screens/UserDetailRegistration";
+import UserProfileRegistration  from "../screens/UserProfileRegistration ";
+import CreatePasswordScreen from "../screens/CreatePasswordScreen";
 import HomePage from "../screens/HomePage";
 
 export type RootStackParamList = {
@@ -43,11 +43,11 @@ const Navigation: React.FC = () => {
         initialRouteName="FirstPage"
         id={undefined}
       >
-        <Stack.Screen name="FirstPage" component={FirstPage} />
-        <Stack.Screen name="RegisterStep1" component={RegisterStep1} />
-        <Stack.Screen name="RegisterStep2" component={RegisterStep2} />
-        <Stack.Screen name="RegisterStep3" component={RegisterStep3} />
-        <Stack.Screen name="RegisterStep4" component={RegisterStep4} />
+        <Stack.Screen name="FirstPage" component={LoginScreen} />
+        <Stack.Screen name="RegisterStep1" component={SelectGenderScreen} />
+        <Stack.Screen name="RegisterStep2" component={UserDetailRegistration} />
+        <Stack.Screen name="RegisterStep3" component={UserProfileRegistration } />
+        <Stack.Screen name="RegisterStep4" component={CreatePasswordScreen} />
         <Stack.Screen name="HomePage" component={HomePage} />
       </Stack.Navigator>
     </NavigationContainer>
