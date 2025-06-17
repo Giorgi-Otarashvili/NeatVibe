@@ -7,21 +7,13 @@ import RegisterStep2 from "./screens/RegisterStep2";
 import RegisterStep3 from "./screens/RegisterStep3";
 import HomePage from "./screens/HomePage";
 import RegisterStep4 from "./screens/RegisterStep4";
+import Navigation from "./Navigation/Navigation";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="FirstPage" component={FirstPage}/>
-        <Stack.Screen name="RegisterStep1" component={RegisterStep1} />
-        <Stack.Screen name="RegisterStep2" component={RegisterStep2} />
-        <Stack.Screen name="RegisterStep3" component={RegisterStep3} />
-        <Stack.Screen name="RegisterStep4" component={RegisterStep4} />
-        <Stack.Screen name="HomePage"  component={HomePage}/>
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Navigation/>
   );
 }
 
