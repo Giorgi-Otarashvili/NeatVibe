@@ -15,7 +15,6 @@ const CustomHeader = ({ title }) => {
 
   return (
     <>
-      <StatusBar barStyle="light-content" backgroundColor="#323232" />
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Ionicons name="arrow-back" size={24} color="white" />
