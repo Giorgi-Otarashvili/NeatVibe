@@ -1,12 +1,12 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import LoginScreen from "../screens/LoginScreen";
-import SelectGenderScreen from "../screens/SelectGenderScreen";
-import UserDetailRegistration from "../screens/UserDetailRegistration";
-import UserProfileRegistration  from "../screens/UserProfileRegistration ";
-import CreatePasswordScreen from "../screens/CreatePasswordScreen";
-import HomePage from "../screens/HomePage";
+import LoginScreen from "../screens/LoginScreen/LoginScreen";
+import SelectGenderScreen from "../screens/SelectGenderScreen/SelectGenderScreen";
+import UserDetailRegistration from "../screens/UserDetailRegistration/UserDetailRegistration";
+import UserProfileRegistration  from "../screens/UserProfileRegistration/UserProfileRegistration ";
+import CreatePasswordScreen from "../screens/CreatePasswordScreen/CreatePasswordScreen";
+import HomePage from "../screens/HomePage/HomePage";
 
 export type RootStackParamList = {
   FirstPage: undefined;

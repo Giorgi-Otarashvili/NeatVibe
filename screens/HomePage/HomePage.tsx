@@ -1,9 +1,12 @@
+import React from "react";
 import { View, Text } from "react-native";
 
-export default function HomePage() {
+ const HomePage: React.FC=() => {
   return (
     <View>
       <Text>Home Page</Text>
     </View>
   );
 }
+
+export default HomePage;

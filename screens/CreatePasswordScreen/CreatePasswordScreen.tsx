@@ -1,17 +1,23 @@
-import { View, Text, StyleSheet, Alert, TouchableOpacity,  } from 'react-native';
-import { useNavigation, useRoute } from '@react-navigation/native';
-import CustomHeader from '../components/Header/CustomHeader';
-import AuthInput from '../components/Inputs/AuthInput';
-import CustomButton from '../components/Buttons/CustomButton';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { View, Text, Alert, TouchableOpacity } from 'react-native';
+import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
-const CreatePasswordScreen = () => {
-  const navigation = useNavigation();
-  const route = useRoute();
+import CustomHeader from '../../components/Header/CustomHeader';
+import AuthInput from '../../components/Inputs/AuthInput';
+import CustomButton from '../../components/Buttons/CustomButton';
+import styles from './CreatePasswordScreenStyles';
+import { RootStackParamList } from '../../Navigation/Navigation';
+
+type CreatePasswordScreenRouteProp = RouteProp<RootStackParamList, 'RegisterStep4'>;
+type CreatePasswordScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'RegisterStep4'>;
+
+const CreatePasswordScreen: React.FC = () => {
+  const navigation = useNavigation<CreatePasswordScreenNavigationProp>();
+  const route = useRoute<CreatePasswordScreenRouteProp>();
 
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-   
 
   const handleRegister = () => {
     if (!password || !confirmPassword) {
@@ -69,24 +75,3 @@ const CreatePasswordScreen = () => {
 };
 
 export default CreatePasswordScreen;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#000',
-    paddingHorizontal: 30,
-    paddingTop: 30,
-  },
-  title: {
-    fontSize: 22,
-    color: 'white',
-    fontWeight: '600',
-    marginBottom: 20,
-  },
-  prevText: {
-    color: '#ccc',
-    textAlign: 'center',
-    marginTop: 15,
-    fontSize: 14,
-  },
-});

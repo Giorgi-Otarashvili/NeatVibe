@@ -7,6 +7,8 @@ type AuthInputProps = {
   value: string;
   onChangeText: (text: string) => void;
   secureTextEntry?: boolean;
+  placeholder?: string;
+  keyboardType?: string;
 };
 
 const AuthInput: React.FC<AuthInputProps> = ({
