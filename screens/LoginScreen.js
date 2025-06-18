@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
-import AuthInput from "../components/AuthInput";
+import AuthInput from "../components/Inputs/AuthInput";
 import { useNavigation } from "@react-navigation/native";
-import CustomButton from "../components/CustomButton";
+import CustomButton from "../components/Buttons/CustomButton";
 import { useState } from "react";
 import NeatVibeIcon from "../assets/vectorSvg/VectorSvg";
 

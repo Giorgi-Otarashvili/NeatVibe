@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import CustomHeader from "../components/CustomHeader";
+import CustomHeader from "../components/Header/CustomHeader";
 
 const SelectGenderScreen = () => {
   const navigation = useNavigation();

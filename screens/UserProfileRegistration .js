@@ -1,9 +1,9 @@
 import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { useState } from 'react';
-import CustomHeader from '../components/CustomHeader';
-import AuthInput from '../components/AuthInput';
-import CustomButton from '../components/CustomButton';
+import CustomHeader from '../components/Header/CustomHeader';
+import AuthInput from '../components/Inputs/AuthInput';
+import CustomButton from '../components/Buttons/CustomButton';
 
 const UserProfileRegistration  = () => {
   const navigation  = useNavigation();
