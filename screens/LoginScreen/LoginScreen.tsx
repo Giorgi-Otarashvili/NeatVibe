@@ -12,6 +12,8 @@ import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../../Navigation/Navigation";
 import styles from "./LoginScreenStyles";
+import { useDispatch } from "react-redux";
+import { login } from "../../store/userSlice";
 
 type LoginScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -21,11 +23,15 @@ type LoginScreenNavigationProp = NativeStackNavigationProp<
 const LoginScreen: React.FC = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
 
   const navigation = useNavigation<LoginScreenNavigationProp>();
 
   const handleLogin = () => {
-    navigation.navigate("HomePage"); 
+  if(username && password) {
+    dispatch(login({username, password}));
+    navigation.navigate("HomePage");
+  }
   };
 
   return (

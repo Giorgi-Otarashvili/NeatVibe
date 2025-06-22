@@ -1,31 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";  
 import { View, Text, StyleSheet, TouchableOpacity, Alert } from "react-native";
-import { useNavigation, useRoute, RouteProp } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { useSelector, useDispatch } from 'react-redux';
 import CustomHeader from "../../components/Header/CustomHeader";
 import AuthInput from "../../components/Inputs/AuthInput";
 import CustomButton from "../../components/Buttons/CustomButton";
 import styles from "./UserDetailRegistrationStyles"; 
-
 import { RootStackParamList } from "../../Navigation/Navigation";
+import { RootState, AppDispatch } from "../../store/store";
+import { setPersonalInfo } from "../../store/registrationsSlice";
 
-type UserDetailRouteProp = RouteProp<RootStackParamList, "RegisterStep2">;
-type NavigationProp = any; 
+type UserDetailNavigationProp = NativeStackNavigationProp<RootStackParamList, "RegisterStep2">;
 
 const UserDetailRegistration: React.FC = () => {
-  const navigation = useNavigation<NavigationProp>();
-  const route = useRoute<UserDetailRouteProp>();
-  const { gender } = route.params || {};
+  const navigation = useNavigation<UserDetailNavigationProp>();
+  const dispatch = useDispatch<AppDispatch>();
+  
+  const savedData = useSelector((state: RootState) => state.registration);
 
-  const [name, setName] = useState<string>("");
-  const [lastName, setLastName] = useState<string>("");
-  const [nationality, setNationality] = useState<string>("");
-  const [type, setType] = useState<string>("");
+  const [name, setName] = useState<string>(savedData.name || "");
+  const [lastName, setLastName] = useState<string>(savedData.lastName || "");
+  const [nationality, setNationality] = useState<string>(savedData.nationality || "");
+  const [type, setType] = useState<string>(savedData.type || "");
 
   const [showNationalityDropdown, setShowNationalityDropdown] = useState<boolean>(false);
   const [showTypeDropdown, setShowTypeDropdown] = useState<boolean>(false);
 
   const nationalities: string[] = ["Georgian", "American", "Other"];
-  const types: string[] = ["Student", "Professional", "Unemployd"];
+  const types: string[] = ["Student", "Professional", "Unemployed"];
+
+  useEffect(() => {
+    if (name || lastName || nationality || type) {
+      dispatch(setPersonalInfo({ name, lastName, nationality, type }));
+    }
+  }, [name, lastName, nationality, type, dispatch]);
 
   const handleNext = () => {
     if (!name || !lastName || !nationality || !type) {
@@ -33,13 +42,9 @@ const UserDetailRegistration: React.FC = () => {
       return;
     }
 
-    navigation.navigate("RegisterStep3", {
-      gender,
-      name,
-      lastName,
-      nationality,
-      type,
-    });
+    dispatch(setPersonalInfo({ name, lastName, nationality, type }));
+
+    navigation.navigate("RegisterStep3");
   };
 
   const selectNationality = (selectedNationality: string) => {
@@ -58,11 +63,9 @@ const UserDetailRegistration: React.FC = () => {
 
       <View style={styles.container}>
         <Text style={styles.title}>Who are you?</Text>
-
         <AuthInput label="Name" value={name} onChangeText={setName} />
         <AuthInput label="LastName" value={lastName} onChangeText={setLastName} />
 
-        {/* Nationality Dropdown */}
         <View style={styles.dropdownContainer}>
           <Text style={styles.label}>Nationality</Text>
           <TouchableOpacity
